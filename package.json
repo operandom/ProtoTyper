@@ -1,6 +1,6 @@
 {
   "name": "proto-typer",
-  "version": "0.1.0",
+  "version": "0.1.01",
   "main": "lib/prototyper.js",
   "description": "ProtoTyper is a utility module for Node.js. It allows type verification and event dispatching on property change.",
   "homepage": "https://github.com/operandom/ProtoTyper",
