@@ -1,0 +1,27 @@
+{
+  "name": "prototyper",
+  "version": "0.0.0",
+  "main": "lib/prototyper.js",
+  "description": "The best module ever.",
+  "homepage": "https://github.com/operandom/ProtoTyped",
+  "bugs": "https://github.com/operandom/prototyper/issues",
+  "author": {
+    "name": "Operandom (Valéry Herlaud)",
+    "email": "contact@operandom.com",
+    "url": "operandom.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/operandom/ProtoTyped"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.0"
+  }
+}
