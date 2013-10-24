@@ -1,18 +1,18 @@
 {
   "name": "prototyper",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "lib/prototyper.js",
   "description": 'ProtoTyper is a utility module for Node.js. Based on `Object.defineProperty`, it allows type verification and event dispatching on property change.",
-  "homepage": "https://github.com/operandom/ProtoTyped",
+  "homepage": "https://github.com/operandom/ProtoTyper",
   "bugs": "https://github.com/operandom/prototyper/issues",
   "author": {
-    "name": "Operandom (Valéry Herlaud)",
+    "name": "Valéry Herlaud",
     "email": "contact@operandom.com",
     "url": "operandom.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/operandom/ProtoTyped"
+    "url": "https://github.com/operandom/ProtoTyper"
   },
   "licenses": [
     {
