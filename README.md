@@ -5,7 +5,7 @@ ProtoTyper is a utility module for Node.js. Based on `Object.defineProperty`, it
 Install the module with: `npm install prototyper`
 
 ```javascript
-var prototyper = require('prototyper');
+var prototyper = require('proto-typer');
 ```
 
 ## Documentation
