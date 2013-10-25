@@ -26,7 +26,7 @@ function MyOtherClass(){
 }
 
 // Extend EventEmitter if events needed.
-util.inherits(Test, EventEmitter);
+util.inherits(MyClass, EventEmitter);
 
 protoTyper.setTarget(Myclass)
 
