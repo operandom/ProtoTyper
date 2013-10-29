@@ -1,23 +1,8 @@
-# ProtoTyper [![Build Status](https://secure.travis-ci.org/operandom/prototyper.png?branch=master)](http://travis-ci.org/operandom/prototyper)
-ProtoTyper is a utility module for Node.js. Based on `Object.defineProperty`, it allows type verification and event dispatching on property change.
-
-## Getting Started
-Install the module with: `npm install proto-typer`
-
-```javascript
-var prototyper = require('proto-typer');
-```
-
-## Documentation
-_(Coming soon)_
-
-## Examples
-```javascript
 // In Node.js
 
 'use strict';
 
-var prototyper = require('proto-typer'),
+var prototyper = require('../lib/prototyper'),
 	define = prototyper.define,
 	util = require('util'),
 	Emitter = require('events').EventEmitter;
@@ -105,17 +90,3 @@ try {
 
 console.log('User version:', user.v);
 user.v = 2.2; // -> exception
-```
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
-
-## Known issues
-When event and type are added to property definition, the "private" method automatically created becomes enumerable. (Pull requests are welcome)
-
-## License
-Copyright (c) 2013 Valéry Herlaud. Licensed under the MIT license.
-See the file LICENSE.md in this distribution for more details.
