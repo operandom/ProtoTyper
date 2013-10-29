@@ -1,6 +1,6 @@
 'use strict';
 
-var types = require('../lib/typetests.js'),
+var gtf = require('../lib/typetests.js').getTestFor,
 	values = {
 		'boolean':	[true, false],
 		'number':	[0, 12, 12.4, -15, -15.4, new Number, Math.LN2],
@@ -9,7 +9,10 @@ var types = require('../lib/typetests.js'),
 		'regexp':	[/a/, new RegExp, new RegExp('a')],
 		'date':		[new Date],
 		'function':	[function(){}, new Function],
-	};
+	},
+	TestClass = function () { this.test = "test" },
+	testClassInstance = new TestClass,
+	temp;
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -38,7 +41,7 @@ exports['typetests'] = {
 	},
 	'no args': function(test) {
 		
-		var nbrTests = 0;
+		var nbrTests = 3;
 		
 		for (var key in values)
 			nbrTests+= values[key].length * 7;
@@ -49,13 +52,18 @@ exports['typetests'] = {
 			for (var key2 in values) {
 				for (var i = 0; i < values[key2].length; i++) {
 					test.deepEqual(
-						types.getTestFor(key)(values[key2][i]),
+						gtf(key)(values[key2][i]),
 						key === key2 ? true : key,
-						'should be' + (key === key2 ? ' ' : ' NOT ') + 'a ' + key + ' but "' + values[key2][i] + '" given.'
+						'should' + (key === key2 ? ' ' : ' NOT ') + 'be a ' + key + ' but "' + values[key2][i] + '" given.'
 					);
 				}
 			}
 		}
+		
+		
+		test.deepEqual(temp = gtf(TestClass)(testClassInstance), true, 'should be a ' + temp + ' but "' + testClassInstance + '" given.');
+		test.deepEqual(temp = gtf(TestClass)(new Date), temp, 'should NOT be a ' + temp + ' but "' + testClassInstance + '" given.');
+		test.deepEqual(temp = gtf(TestClass)(true), temp, 'should NOT be a ' + temp + ' but "' + true + '" given.');
 		
 		test.done();
 	}
