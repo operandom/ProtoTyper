@@ -51,7 +51,7 @@ exports['typetests'] = {
 		for (var key in values) {
 			for (var key2 in values) {
 				for (var i = 0; i < values[key2].length; i++) {
-					test.deepEqual(
+					test.strictEqual(
 						gtf(key)(values[key2][i]),
 						key === key2 ? true : key,
 						'should' + (key === key2 ? ' ' : ' NOT ') + 'be a ' + key + ' but "' + values[key2][i] + '" given.'
