@@ -100,7 +100,7 @@ user.pet = new Cat; // -> Jhon Doe has a new pet, it's a cat, but a REALLY big o
 try {
 	user.pet = new Car; // -> It's seems that this car is not a pet
 }catch(e){
-	console.log("It's seems that this car is not a pet");
+	console.log("It seems that this car is not a pet");
 }
 
 console.log('User version:', user.v);
