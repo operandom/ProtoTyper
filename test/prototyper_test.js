@@ -16,7 +16,7 @@ exports['prototyper'] = {
 		util.inherits(ClassTest, events.EventEmitter);
 		
 		prototyper
-		.define(ClassTest.prototype)
+		.d(ClassTest.prototype)
 		.c('CONST', 'const')
 		.p('var', 'var')
 		.p('bool', true).type(Boolean)
