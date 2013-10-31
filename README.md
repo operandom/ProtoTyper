@@ -1,4 +1,4 @@
-# ProtoTyper [![Build Status](https://secure.travis-ci.org/operandom/prototyper.png?branch=master)](http://travis-ci.org/operandom/prototyper)
+# ProtoTyper [![Build Status](https://travis-ci.org/operandom/ProtoTyper.png?branch=master)](https://travis-ci.org/operandom/ProtoTyper)
 ProtoTyper is a utility module for Node.js. Based on `Object.defineProperty`, it allows type verification and event dispatching on property change.
 
 ## Getting Started
