@@ -1,10 +1,10 @@
 {
 	"name": "proto-typer",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"main": "lib/prototyper.js",
 	"description": "ProtoTyper is a helper module to add type verification and event dispatching on property change. Ex: prototyper.d(MyClass.prototype).p('name', 'Jhon').t(String).e()",
 	"homepage": "https://github.com/operandom/ProtoTyper",
-	"bugs": "https://github.com/operandom/prototyper/issues",
+	"bugs": "https://github.com/operandom/ProtoTyper/issues",
 	"author": {
 		"name": "Valéry Herlaud",
 		"email": "contact@operandom.com",
