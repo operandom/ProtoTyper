@@ -72,8 +72,8 @@ function getFullName() {
 
 var user = new User;
 
-user.on(prototyper.Change, function(event) {
-	
+user.on(prototyper.CHANGE, function(event) {
+	// Do something
 });
 
 user.on('nameChange', function (event) {
