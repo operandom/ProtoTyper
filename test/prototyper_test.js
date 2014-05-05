@@ -1,3 +1,5 @@
+/* jshint -W053 */
+
 'use strict';
 
 var prototyper = require('../lib/prototyper.js'),
@@ -9,8 +11,8 @@ var prototyper = require('../lib/prototyper.js'),
 function ClassTest() {}
 
 
-exports['prototyper'] = {
-	setUp: function(done) {
+exports.prototyper = {
+	setUp: function (done) {
 		
 		
 		util.inherits(ClassTest, events.EventEmitter);
@@ -27,11 +29,11 @@ exports['prototyper'] = {
 		.p('stringE', 'stringE').type(String).e()
 		;
 		
-		instance = new ClassTest;
+		instance = new ClassTest();
 		
 		done();
 	},
-	'no args': function(test) {
+	'no args': function (test) {
 		
 		test.expect(17);
 		
@@ -45,32 +47,32 @@ exports['prototyper'] = {
 		// BOOLEAN
 		test.strictEqual(instance.bool, true);
 		test.doesNotThrow(
-			function() {
+			function () {
 				instance.bool = false;
 				instance.bool = true;
 			},
 			'A boolean should be assigned.'
 		);
 		test.throws(
-			function() {
+			function () {
 				instance.bool = 0;
 			},
-			"A Number shouldn't be assigned to a Boolean."
+			'A Number shouldn\'t be assigned to a Boolean.'
 		);
 		
 		test.strictEqual(instance.boolE, true);
 		test.doesNotThrow(
-			function() {
+			function () {
 				instance.boolE = false;
 			},
 			'A boolean should be assigned.'
 		);
 		test.strictEqual(instance.boolE, false);
 		test.throws(
-			function() {
+			function () {
 				instance.boolE = 0;
 			},
-			"A Number shouldn't be assigned to a Boolean."
+			'A Number shouldn\'t be assigned to a Boolean.'
 		);
 		
 		
@@ -80,17 +82,17 @@ exports['prototyper'] = {
 		
 		number = new Number(Math.LN2);
 		test.doesNotThrow(
-			function() {
+			function () {
 				instance.number = number;
 			},
 			number + ' should be assigned to instance.number.'
 		);
 		test.strictEqual(instance.number, number, instance.number + ' should be equal to ' + number);
 		test.throws(
-			function() {
+			function () {
 				instance.number = true;
 			},
-			"A Boolean shouln't be assigned to instance.number"
+			'A Boolean shouln\'t be assigned to instance.number'
 		);
 		
 		
@@ -98,7 +100,7 @@ exports['prototyper'] = {
 		var string = 'string2';
 		test.strictEqual(instance.string, 'string', instance.string + ' should be equal to "string".');
 		test.doesNotThrow(
-			function() {
+			function () {
 				instance.string = string;
 			},
 			string + ' should be assigned to instance.string'

@@ -1,35 +1,39 @@
+/* jshint -W053, -W054, -W009 */
+
 'use strict';
 
 var gtf = require('../lib/typetests.js').getTestFor,
 	values = {
 		'boolean':	[true, false],
-		'number':	[0, 12, 12.4, -15, -15.4, new Number, Math.LN2],
-		'string':	['', 'string', new String, new String('string'), new String(12), new String(Function)],
-		'array':	[[], [1, 'a', new Function, {}], new Array, new Array(1, 'a', new Function, {})],
-		'regexp':	[/a/, new RegExp, new RegExp('a')],
-		'date':		[new Date],
-		'function':	[function(){}, new Function],
+		'number':	[0, 12, 12.4, -15, -15.4, new Number(), Math.LN2],
+		'string':	['', 'string', new String(), new String('string'), new String(12), new String(Function)],
+		'array':	[[], [1, 'a', new Function(), {}], new Array(), new Array(1, 'a', new Function(), {})],
+		'regexp':	[/a/, new RegExp(), new RegExp('a')],
+		'date':		[new Date()],
+		'function':	[function () {}, new Function()],
 	},
-	TestClass = function () { this.test = "test" },
-	testClassInstance = new TestClass,
+	TestClass = function () { this.test = 'test'; },
+	testClassInstance = new TestClass(),
 	temp;
 
 
-exports['typetests'] = {
-	setUp: function(done) {
+exports.typetests = {
+	setUp: function (done) {
 		
 		done();
 	},
-	'no args': function(test) {
+	'no args': function (test) {
 		
-		var nbrTests = 3;
+		var nbrTests = 3,
+			key;
 		
-		for (var key in values)
-			nbrTests+= values[key].length * 7;
+		for (key in values) {
+			nbrTests += values[key].length * 7;
+		}
 		
 		test.expect(nbrTests);
 		
-		for (var key in values) {
+		for (key in values) {
 			for (var key2 in values) {
 				for (var i = 0; i < values[key2].length; i++) {
 					test.strictEqual(
@@ -43,7 +47,7 @@ exports['typetests'] = {
 		
 		
 		test.deepEqual(temp = gtf(TestClass)(testClassInstance), true, 'should be a ' + temp + ' but "' + testClassInstance + '" given.');
-		test.deepEqual(temp = gtf(TestClass)(new Date), temp, 'should NOT be a ' + temp + ' but "' + testClassInstance + '" given.');
+		test.deepEqual(temp = gtf(TestClass)(new Date()), temp, 'should NOT be a ' + temp + ' but "' + testClassInstance + '" given.');
 		test.deepEqual(temp = gtf(TestClass)(true), temp, 'should NOT be a ' + temp + ' but "' + true + '" given.');
 		
 		test.done();
