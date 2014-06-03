@@ -15,7 +15,7 @@
 		"url": "https://github.com/operandom/ProtoTyper"
 	},
 	"scripts": {
-		"test": "nodeunit ./test/prototyper_test.js ./test/typetests_test.js"
+		"test": "grunt"
 	},
 	"licenses": [
 		{
